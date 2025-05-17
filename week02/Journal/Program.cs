@@ -28,10 +28,26 @@ class Program
                     string prompt = promptGenerator.GetRandomPrompt();
                     Console.WriteLine(prompt);
                     string entryText = Console.ReadLine();
+
+                    Console.WriteLine("How are you feeling today?");
+                    Console.WriteLine("1. Happy\n2. Reflective\n3. Stressed\n4. Excited\n5. Sad");
+                    string moodChoice = Console.ReadLine();
+                    string mood = moodChoice switch
+                    {
+                        "1" => "Happy",
+                        "2" => "Reflective",
+                        "3" => "Stressed",
+                        "4" => "Excited",
+                        "5" => "Sad",
+                        _ => "Unknown"
+                    };
+
+
                     Entry newEntry = new Entry
                     {
                         _date = DateTime.Now.ToString("yyyy-MM-dd"),
                         _prompt = prompt,
+                        _mood = mood,
                         _entryText = entryText
                     };
                     journal.AddEntry(newEntry);
