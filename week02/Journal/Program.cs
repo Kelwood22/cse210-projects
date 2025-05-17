@@ -1,3 +1,6 @@
+// Added a mood entry to the journal program for creativity and exceeding expectations. Thank you! :)
+
+
 using System;
 using System.ComponentModel.DataAnnotations;
 
